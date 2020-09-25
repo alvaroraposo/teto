@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import IframeComponent from './components/Iframe/Iframe';
+import Skybot from './components/Skybot';
+
 import './App.css';
 
 function App() {
+  const [site, setSite] = useState("https://www.techo.org/brasil/");
+
+  const changeSite = (newSite) => {
+    setSite(newSite);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <IframeComponent src={site} />
+      <Skybot changeSite={changeSite}/>
     </div>
   );
 }
