@@ -2,7 +2,6 @@ import React from 'react';
 import './style/style.css';
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
-import BuscaMensagens from './BuscaMensagens';
 import {theme, avatarStyle, bubbleOptionStyle, bubbleStyle, rootStyle, contentStyle, footerStyle, inputStyle, submitButtonStyle} from './style/theme'
 import imageBot from '../../src/skycoders.png'
 
@@ -58,7 +57,7 @@ export default function Skybot({changeSite}) {
         },
         {
             id: '9',
-            message: 'Aqui você descobre como tornar sua empresa Amiga do Teto!',
+            message: 'Aqui você descobre como tornar sua empresa Amiga do TETO!',
             trigger: '5'
         },
         {
@@ -85,14 +84,15 @@ export default function Skybot({changeSite}) {
                 headerTitle="Seja bem-vindo"
                 avatarStyle={avatarStyle}
                 floating={true}
+                floatingIcon={imageBot}
                 placeholder="Digite uma mensagem"
                 recognitionEnable={true}
                 recognitionLang="pt-br"
                 recognitionPlaceholder="Estou ouvindo ..."
                 botAvatar={imageBot}
                 hideUserAvatar={true}
-                // bubbleOptionStyle={bubbleOptionStyle}
-//                bubbleStyle={bubbleStyle}
+                bubbleOptionStyle={bubbleOptionStyle}
+                bubbleStyle={bubbleStyle}
                 contentStyle={contentStyle}
                 footerStyle={footerStyle}
                 inputStyle={inputStyle}
